@@ -5,25 +5,31 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <title>Pomelia Eco Hotel</title>
     <link rel="shortcut icon" href="/static/accounts/logo.png" />
 </head>
 
 <body>
+
     <!-- Image and text -->
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">
+
+    <nav class="navbar">
+
+        <div>
+            <a class="logo" href="{% url 'home' %}">
                 {% load static %}
-                <img src="{% static 'accounts/logo.png' %}" alt="" width="30" height="24" class="d-inline-block align-top">
+                <img src="{% static 'accounts/logo.png' %}" alt="" width="30" height="24"
+                    class="img">
                 Pomelia Eco Hotel
             </a>
         </div>
+
+        <div class="logoutDiv">
+            <span class="hello-msg">Ciao, {{request.user}}</span>
+            <span> <a href="{% url 'logout' %}">Logout</a></span>
+        </div>
+
     </nav>
 
     {% block content %}

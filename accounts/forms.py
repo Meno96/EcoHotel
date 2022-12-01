@@ -20,11 +20,11 @@ class CreateUserForm(UserCreationForm):
         })
 
         self.fields['password1'].widget.attrs.update({
-            'placeholder': 'Enter Password..',
+            'placeholder': 'Inserisci la Password..',
         })
 
         self.fields['password2'].widget.attrs.update({
-            'placeholder': 'Re-enter Password..',
+            'placeholder': 'Inserisci nuovamente la Password..',
         })
 
         for field in self.fields:
