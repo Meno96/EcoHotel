@@ -1,0 +1,36 @@
+[33mcommit d9e4fbcabcef9254e1ab6cb118d1b201eab21893[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m)[m
+Author: Daniele <danielemeno96@gmail.com>
+Date:   Fri Dec 2 00:13:23 2022 +0100
+
+    dev Login
+
+[33mcommit 39c954edb2d478251dc33404c1f02c1d6390eac8[m
+Merge: 1afc245 a456863
+Author: Daniele <danielemeno96@gmail.com>
+Date:   Thu Dec 1 16:47:19 2022 +0100
+
+    Merge branch 'main' into dev
+
+[33mcommit 1afc2458d62a7f0afb82392f5712acb975352962[m
+Author: Daniele <danielemeno96@gmail.com>
+Date:   Thu Dec 1 16:46:35 2022 +0100
+
+    dev
+
+[33mcommit a4568634a4b705334d320235307476be7c4b51bd[m[33m ([m[1;32mmain[m[33m)[m
+Author: Daniele <danielemeno96@gmail.com>
+Date:   Thu Dec 1 16:45:43 2022 +0100
+
+    creata pagina di registrazione
+
+[33mcommit e0ff9bd8316fb82b28845c9562e56c79e5ac45d9[m
+Author: Daniele <danielemeno96@gmail.com>
+Date:   Thu Dec 1 16:37:21 2022 +0100
+
+    dev
+
+[33mcommit 49e30bfb4218d9f2626535791346253240f06f49[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/dev[m[33m)[m
+Author: Daniele <danielemeno96@gmail.com>
+Date:   Wed Nov 30 17:28:00 2022 +0100
+
+    Inizio
