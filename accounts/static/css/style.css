@@ -274,7 +274,7 @@ h1 {
 
 /*-- main --*/
 .main-w3layouts {
-  padding: 3em 0 1em;
+  /* padding: 3em 0 1em; */
 }
 
 .main-agileinfo {
@@ -504,6 +504,9 @@ input.checkbox:checked:after {
 /*-- //copyright --*/
 .wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   overflow: hidden;
   height: 100%;
 }
