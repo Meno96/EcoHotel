@@ -2,6 +2,43 @@
 
 {% block content %}
 
-<h1>HomePage</h1>
+<div class="wrapper-nav">
+    <div class="container">
+        <!-- Mostra l'avviso se l'IP non corrisponde -->
+        {% if checkIp == True %}
+            <p>L'indirizzo IP corrente è diverso dal precedente con cui è stato effettuato il login!</p>
+        {% endif %}
+
+        {% for message in messages %}
+            <p id="messages">{{message}}</p>
+        {% endfor %}
+        <ul class="lista-home">
+            <!-- Link con testo che cambia se l'accesso è stato effettuato con account con privilegi staff -->
+            {% if request.user.is_staff %}
+                <li><a class='text' href="{% url 'consumi' %}">Visualizza la tabella con il totale consumi, prodotto e l'hash (admin)</a></li>
+                <li><a class='text' href="{% url 'inser' %}">Form per inserire dati del database (admin)</a></li>
+            {% else %}
+                <li><a class='text' href="{% url 'consumi' %}">Visualizza la tabella con i consumi e l'hash</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    
+
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+</div>
+
 
 {% endblock %}
