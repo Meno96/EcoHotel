@@ -28,6 +28,7 @@ def messageBox(message):
     button.pack(side="bottom", fill="none", expand=True)
     root.mainloop()
 
+
 @csrf_exempt
 def getActualIP(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
@@ -38,6 +39,7 @@ def getActualIP(request):
         ip = request.META.get('REMOTE_ADDR')
 
     return ip
+
 
 @csrf_exempt
 def addIp(actualIp):
@@ -54,19 +56,20 @@ def loginPage(request):
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
 
-        # Memorizza l’ultimo IP che ha avuto accesso alla 
-        # piattaforma per un admin, mostra un messaggio di 
+        # Memorizza l’ultimo IP che ha avuto accesso alla
+        # piattaforma per un admin, mostra un messaggio di
         # avvertimento quando questo è diverso dal precedente
         if request.user.is_staff:
             dbIp = IpAddress.objects.all().values().last()
             actualIp = getActualIP(request)
-            
+
             if not dbIp:
                 addIp(actualIp)
             else:
-                if actualIp!=dbIp['ip_address']:
+                if actualIp != dbIp['ip_address']:
                     addIp(actualIp)
-                    messageBox("L'indirizzo IP corrente è diverso dal precedente con cui è stato effettuato il login!")
+                    messageBox(
+                        "L'indirizzo IP corrente è diverso dal precedente con cui è stato effettuato il login!")
 
         if user is not None:
             login(request, user)
@@ -116,20 +119,27 @@ def consumiPage(request):
         consumed_energy_in_watt = body['consumed_energy_in_watt']
 
         # print(body)
-        t = Consumi(produced_energy_in_watt=produced_energy_in_watt, consumed_energy_in_watt=consumed_energy_in_watt)
+        t = Consumi(produced_energy_in_watt=produced_energy_in_watt,
+                    consumed_energy_in_watt=consumed_energy_in_watt)
         Consumi.writeOnChain(t)
 
         # return JsonResponse(t, safe=False)
-    
-    data = Consumi.objects.all()
 
-    return render(request, 'accounts/consumi.html',  {'data': data})
+    data = Consumi.objects.all()
+    totaleP = 0
+    totaleC = 0
+    for object in data:
+        totaleP += int(object.produced_energy_in_watt)
+        totaleC += int(object.consumed_energy_in_watt)
+
+    return render(request, 'accounts/consumi.html',  {'data': data, 'totaleP': totaleP, 'totaleC': totaleC})
 
 
 @csrf_exempt
 def userPage(request):
     context = {}
     return render(request, 'accounts/user.html', context)
+
 
 @login_required(login_url='login')
 @csrf_exempt
