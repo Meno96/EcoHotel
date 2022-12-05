@@ -2,6 +2,15 @@
 
 {% block content %}
 
-<h1>HomePage</h1>
+<div class="container">
+    <ul class="lista-home">
+        <li><a class='text' href="{% url 'consumi' %}">Visualizza la tabella con i consumi e l'hash</a></li>
+        {% if request.user.is_staff %}
+        <li><a class='text' href="{% url 'consumi' %}">Visualizza la tabella con i consumi e l'hash</a></li>
+        {% endif %}
+    </ul>
+    
+</div>
+
 
 {% endblock %}

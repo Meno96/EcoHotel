@@ -5,7 +5,11 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse, HttpResponse
 from datetime import datetime
+from .models import Consumi
+import json
+
 # from tkinter import *
 import tkinter as tk
 import tkinter.messagebox
@@ -53,7 +57,7 @@ def loginPage(request):
         # Memorizza l’ultimo IP che ha avuto accesso alla 
         # piattaforma per un admin, mostra un messaggio di 
         # avvertimento quando questo è diverso dal precedente
-        if user.groups.filter(name='admin').exists():
+        if request.user.is_staff:
             dbIp = IpAddress.objects.all().values().last()
             actualIp = getActualIP(request)
             
@@ -104,10 +108,22 @@ def logoutUser(request):
 
 @csrf_exempt
 @login_required(login_url='login')
-@admin_only
 def consumiPage(request):
-    context = {}
-    return render(request, 'accounts/consumi.html', context)
+    if request.method == "POST":
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        produced_energy_in_watt = body['produced_energy_in_watt']
+        consumed_energy_in_watt = body['consumed_energy_in_watt']
+
+        # print(body)
+        t = Consumi(produced_energy_in_watt=produced_energy_in_watt, consumed_energy_in_watt=consumed_energy_in_watt)
+        Consumi.writeOnChain(t)
+
+        # return JsonResponse(t, safe=False)
+    
+    data = Consumi.objects.all()
+
+    return render(request, 'accounts/consumi.html',  {'data': data})
 
 
 @csrf_exempt

@@ -24,11 +24,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   color: white;
 }
 
-a:visited {
+.navbar a:visited {
   color: white;
 }
 
-a:hover {
+.navbar a:hover {
   color: rgb(172, 172, 172);
 }
 
@@ -44,6 +44,64 @@ a:hover {
 .img{
   margin-right: 10px;
 }
+
+.container {
+  display: flex;
+  color: white;
+  padding: 50px;
+  font-size: 40px;
+}
+
+.lista-home{
+  list-style: circle;
+}
+
+.page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  margin: 20px;
+}
+
+.table-wrap{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.table {
+  /* width: 100%; */
+  color: #212529; 
+  margin: 20px;
+  border-collapse: collapse;
+  overflow-x: scroll;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border: 1px solid #dee2e6;
+  text-align: center;
+  text-decoration: none;
+}
+
+tbody tr:nth-child(odd){
+  background-color: #7db161;
+}
+
+.table thead{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.table a{
+  text-decoration: none;
+  color: black;
+}
+
+ 
 
 
 
