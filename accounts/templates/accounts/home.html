@@ -2,6 +2,36 @@
 
 {% block content %}
 
-<h1>HomePage</h1>
+<div class="wrapper-nav">
+    <div class="container">
+        {% if checkIp == True %}
+            <p>L'indirizzo IP corrente è diverso dal precedente con cui è stato effettuato il login!</p>
+        {% endif %}
+        <ul class="lista-home">
+            {% if request.user.is_staff %}
+                <li><a class='text' href="{% url 'consumi' %}">Visualizza la tabella con il totale consumi, prodotto e l'hash (admin)</a></li>
+            {% else %}
+                <li><a class='text' href="{% url 'consumi' %}">Visualizza la tabella con i consumi e l'hash</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    
+
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+</div>
+
 
 {% endblock %}
