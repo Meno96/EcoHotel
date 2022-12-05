@@ -15,13 +15,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 .navbar {
   display: flex;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   background-color: rgb(60, 83, 65);
+  height: 50px;
+  width: 100%;
   text-decoration: none;
   font-size: 20px;
   color: white;
+  z-index: 10;
+  top: 0;
+}
+
+.nav-elem{
+  padding: 10px;
 }
 
 .navbar a:visited {
@@ -45,15 +53,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   margin-right: 10px;
 }
 
-.container {
-  display: flex;
-  color: white;
-  padding: 50px;
-  font-size: 40px;
-}
-
 .lista-home{
   list-style: circle;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 60px 50px;
+  font-size: 30px;
+}
+.lista-home li{
+  padding: 10px 0px;
+}
+
+.lista-home a{
+  color: white;
 }
 
 .page{
@@ -64,14 +77,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   margin: 20px;
 }
 
+.wrapper-nav {
+  z-index: 9;
+  height: 100%;
+  width: 100%;
+}
+
 .table-wrap{
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 70px 20px;
 }
 
 .table {
-  /* width: 100%; */
   color: #212529; 
   margin: 20px;
   border-collapse: collapse;
@@ -88,10 +106,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 }
 
 tbody tr:nth-child(odd){
-  background-color: #7db161;
+  background-color: rgba(106, 163, 75, 0.692);
 }
 
 .table thead{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.table tbody tr th{
   font-weight: bold;
   font-size: 18px;
 }
@@ -100,9 +123,6 @@ tbody tr:nth-child(odd){
   text-decoration: none;
   color: black;
 }
-
- 
-
 
 
 html,
@@ -331,9 +351,9 @@ h1 {
 }
 
 /*-- main --*/
-.main-w3layouts {
-  /* padding: 3em 0 1em; */
-}
+/* .main-w3layouts {
+  padding: 3em 0 1em;
+} */
 
 .main-agileinfo {
   width: 35%;
@@ -576,7 +596,9 @@ input.checkbox:checked:after {
   width: 100%;
   height: 100%;
   z-index: -1;
+  overflow: hidden;
 }
+
 
 .colorlib-bubbles li {
   position: absolute;

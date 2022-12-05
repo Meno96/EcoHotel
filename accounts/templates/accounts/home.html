@@ -2,14 +2,29 @@
 
 {% block content %}
 
-<div class="container">
+<div class="wrapper-nav">
     <ul class="lista-home">
-        <li><a class='text' href="{% url 'consumi' %}">Visualizza la tabella con i consumi e l'hash</a></li>
         {% if request.user.is_staff %}
-        <li><a class='text' href="{% url 'consumi' %}">Visualizza la tabella con i consumi e l'hash</a></li>
+            <li><a class='text' href="{% url 'consumi' %}">Visualizza la tabella con il totale consumi, prodotto e l'hash (admin)</a></li>
+        {% else %}
+            <li><a class='text' href="{% url 'consumi' %}">Visualizza la tabella con i consumi e l'hash</a></li>
         {% endif %}
     </ul>
     
+
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
 </div>
 
 
