@@ -12,11 +12,11 @@
 
 <body>
 
-    <!-- Image and text -->
+    <!-- Navbar in common da estendere tramite extends -->
 
     <nav class="navbar">
 
-        <div>
+        <div class="nav-elem">
             <a class="logo" href="{% url 'home' %}">
                 {% load static %}
                 <img src="{% static 'accounts/logo.png' %}" alt="" width="30" height="24"
@@ -25,7 +25,8 @@
             </a>
         </div>
 
-        <div class="logoutDiv">
+        <!-- Sezione a destra della navbar che mostra username e permette il logout -->
+        <div class="nav-elem">
             <span class="hello-msg">Ciao, {{request.user}}</span>
             <span> <a href="{% url 'logout' %}">Logout</a></span>
         </div>

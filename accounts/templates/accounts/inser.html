@@ -1,0 +1,36 @@
+{% extends 'accounts/common.html' %}
+
+{% block content %}
+
+<div class="main-w3layouts wrapper">
+    <h1>Inserisci i dati</h1>
+    <div class="main-agileinfo">
+        <div class="agileits-top">
+            <form action="#" method="post">
+                {% csrf_token %}
+                <textarea name="dati" cols="30" rows="10" class="text w3lpass" placeholder="Inserisci in un dict i dati tra le virgolette" required="">{"produced_energy_in_watt":  "", "consumed_energy_in_watt": ""}</textarea>
+                <input type="submit" value="INVIA DATI AL DB">
+            </form>
+
+            {% for message in messages %}
+                <p id="messages">{{message}}</p>
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+{% endblock %}
