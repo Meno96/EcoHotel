@@ -2,39 +2,68 @@
 
 {% block content %}
 
-<div class="table-wrap">
-    <h1>Consumi</h1>
+<div class="wrapper-nav">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Day</th>
-                <th>Produced Energy(W)</th>
-                <th>Consumed Energy(W)</th>
-                <th>Transaction Hash</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for object in data %}  
-            <tr>
-                <th>
-                    {{object.datetime|date:'d-m-Y'}}
-                </th>
-                <td>
-                    {{object.produced_energy_in_watt}}
-                </td>
-                <td>
-                    {{object.consumed_energy_in_watt}}
-                </td>
-                <td>
-                    <a href="https://goerli.etherscan.io/tx/{{object.txId}}">{{object.txId}}</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="table-wrap">
+        <h1>Consumi</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Produced Energy(W)</th>
+                    <th>Consumed Energy(W)</th>
+                    <th>Transaction Hash</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in data %}  
+                <tr>
+                    <th>
+                        {{object.datetime|date:'d-m-Y'}}
+                    </th>
+                    <td>
+                        {{object.produced_energy_in_watt}}
+                    </td>
+                    <td>
+                        {{object.consumed_energy_in_watt}}
+                    </td>
+                    <td>
+                        <a href="https://goerli.etherscan.io/tx/{{object.txId}}" target="_blank">{{object.txId}}</a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+                {% if request.user.is_staff %}
+                <tr>
+                    <th>Totale</th>
+                    <td>
+                        {{totaleP}}
+                    </td>
+                    <td>
+                        {{totaleC}}
+                    </td>
+                    <td></td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+
+    </div>
+
+    <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
 </div>
-
-
 
 {% endblock %}
