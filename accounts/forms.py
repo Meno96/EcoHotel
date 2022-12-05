@@ -3,12 +3,12 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
 
-
+# Classe per la creazione di utenti
 class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
-
+    # Definimo i placeholders
     def __init__(self, *args, **kwargs):
         super(CreateUserForm, self).__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update({
@@ -27,6 +27,7 @@ class CreateUserForm(UserCreationForm):
             'placeholder': 'Inserisci nuovamente la Password..',
         })
 
+        # Ciclo for per attribuire le classi
         for field in self.fields:
 
             self.fields[field].widget.attrs.update({

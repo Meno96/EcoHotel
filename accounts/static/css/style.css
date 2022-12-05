@@ -9,26 +9,34 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 #messages,
 .errorlist {
   margin: 20px;
-  color: white;
+  color: red;
   font-weight: bold;
 }
 
 .navbar {
   display: flex;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
   background-color: rgb(60, 83, 65);
+  height: 50px;
+  width: 100%;
   text-decoration: none;
   font-size: 20px;
   color: white;
+  z-index: 10;
+  top: 0;
 }
 
-a:visited {
+.nav-elem{
+  padding: 10px;
+}
+
+.navbar a:visited {
   color: white;
 }
 
-a:hover {
+.navbar a:hover {
   color: rgb(172, 172, 172);
 }
 
@@ -45,6 +53,90 @@ a:hover {
   margin-right: 10px;
 }
 
+.lista-home{
+  list-style: circle;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 20px 50px;
+  font-size: 30px;
+}
+.lista-home li{
+  padding: 10px 0px;
+}
+
+.lista-home a{
+  color: white;
+}
+
+.page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  margin: 20px;
+}
+
+.wrapper-nav {
+  z-index: 9;
+  height: 100%;
+  width: 100%;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  padding: 70px 20px;
+}
+
+.container p{
+  color: red;
+  justify-self: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.table-wrap{
+  display: flex;
+  flex-direction: column;
+  padding: 70px 20px;
+}
+
+.table {
+  color: #212529; 
+  margin: 20px;
+  border-collapse: collapse;
+  overflow-x: scroll;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border: 1px solid #dee2e6;
+  text-align: center;
+  text-decoration: none;
+}
+
+tbody tr:nth-child(odd){
+  background-color: rgba(106, 163, 75, 0.692);
+}
+
+.table thead{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.table tbody tr th{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.table a{
+  text-decoration: none;
+  color: black;
+}
 
 
 html,
@@ -273,9 +365,9 @@ h1 {
 }
 
 /*-- main --*/
-.main-w3layouts {
-  /* padding: 3em 0 1em; */
-}
+/* .main-w3layouts {
+  padding: 3em 0 1em;
+} */
 
 .main-agileinfo {
   width: 35%;
@@ -518,7 +610,9 @@ input.checkbox:checked:after {
   width: 100%;
   height: 100%;
   z-index: -1;
+  overflow: hidden;
 }
+
 
 .colorlib-bubbles li {
   position: absolute;
