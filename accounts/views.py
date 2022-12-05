@@ -10,23 +10,10 @@ from datetime import datetime
 from .models import Consumi
 import json
 
-# from tkinter import *
-import tkinter as tk
-import tkinter.messagebox
-
 # Create your views here.
 from .forms import CreateUserForm
 from .decorators import unauthenticated_user, allowed_users, admin_only
 from .models import IpAddress
-
-
-def messageBox(message):
-    root = tk.Tk()
-    label = tk.Label(root, text=message)
-    label.pack(side="top", fill="both", expand=True, padx=20, pady=20)
-    button = tk.Button(root, text="OK", command=lambda: root.destroy())
-    button.pack(side="bottom", fill="none", expand=True)
-    root.mainloop()
 
 
 @csrf_exempt
