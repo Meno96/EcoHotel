@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
     <title>Pomelia Eco Hotel</title>
-    <link rel="shortcut icon" href="{% static 'accounts/logo.png %}" />
+    <link rel="shortcut icon" href="{% static '/img/logo.png' %}" />
 </head>
 
 <body>
@@ -20,8 +20,7 @@
         <div class="nav-elem">
             <a class="logo" href="{% url 'home' %}">
                 {% load static %}
-                <img src="{% static 'accounts/logo.png' %}" alt="" width="30" height="24"
-                    class="img">
+                <img src="{% static '/img/logo.png' %}" alt="" width="30" height="24" class="img">
                 Pomelia Eco Hotel
             </a>
         </div>
