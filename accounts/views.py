@@ -53,7 +53,7 @@ def loginPage(request):
 @unauthenticated_user
 @csrf_exempt
 def registerPage(request):
-    # form = CreateUserForm()
+    form = CreateUserForm()
 
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
