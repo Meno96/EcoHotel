@@ -10,7 +10,8 @@ class IpAddress(models.Model):
     pub_date = models.DateTimeField('date published')
     ip_address = models.GenericIPAddressField()
 
-# Classe per creare oggetti con relativi dati di consumo e energia prodotta, con il metodo writeOnChain si scrive nella chain i suddetti dati
+# Classe per creare oggetti con relativi dati di consumo e energia prodotta, 
+# con il metodo writeOnChain si scrive nella chain i suddetti dati
 class Consumi(models.Model):
     datetime = models.DateTimeField(auto_now_add=True)
     produced_energy_in_watt = models.TextField()

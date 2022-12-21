@@ -53,7 +53,7 @@ def loginPage(request):
 @unauthenticated_user
 @csrf_exempt
 def registerPage(request):
-    form = CreateUserForm()
+    # form = CreateUserForm()
 
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
@@ -82,16 +82,17 @@ def logoutUser(request):
 @login_required(login_url='login')
 def consumiPage(request):
 
-    # Quando vede una request POST prende i dati e crea un oggetto nel db e manda la transazione on chain (VIA POSTMAN)
-    # if request.method == "POST":
-    #     body_unicode = request.body.decode('utf-8')
-    #     body = json.loads(body_unicode)
-    #     produced_energy_in_watt = body['produced_energy_in_watt']
-    #     consumed_energy_in_watt = body['consumed_energy_in_watt']
+    # Quando vede una request POST prende i dati e crea un oggetto nel 
+    # db e manda la transazione on chain (VIA POSTMAN)
+    if request.method == "POST":
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        produced_energy_in_watt = body['produced_energy_in_watt']
+        consumed_energy_in_watt = body['consumed_energy_in_watt']
 
-    #     t = Consumi(produced_energy_in_watt=produced_energy_in_watt,
-    #                 consumed_energy_in_watt=consumed_energy_in_watt)
-    #     Consumi.writeOnChain(t)
+        t = Consumi(produced_energy_in_watt=produced_energy_in_watt,
+                    consumed_energy_in_watt=consumed_energy_in_watt)
+        Consumi.writeOnChain(t)
 
     # Calcola il totale per mandarlo all'html
     data = Consumi.objects.all()
@@ -108,7 +109,9 @@ def consumiPage(request):
 @csrf_exempt
 def homePage(request):
 
-    # Memorizza l’ultimo IP che ha avuto accesso alla piattaforma per un admin, mostra un messaggio di avvertimento quando questo è diverso dal precedente
+    # Memorizza l’ultimo IP che ha avuto accesso alla 
+    # piattaforma per un admin, mostra un messaggio di 
+    # avvertimento quando questo è diverso dal precedente
     checkIp={'checkIp': None}
     if request.user.is_staff:
         dbIp = IpAddress.objects.all().values().last()
@@ -126,7 +129,8 @@ def homePage(request):
 # Inserisce nel database i dati che si inseriscono in inser.html nella textarea
 def inserData(request):
 
-    # Quando vede una request POST prende i dati e crea un oggetto nel db e manda la transazione on chain
+    # Quando vede una request POST prende i dati e crea un oggetto 
+    # nel db e manda la transazione on chain
     if request.method == "POST":
         dati = request.POST.get('dati')
         dati = json.loads(dati)
