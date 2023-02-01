@@ -3,7 +3,7 @@ from web3 import Web3
 # Funzione per mandare la transazione alla chain
 def sendTransaction(message):
     w3 = Web3(Web3.HTTPProvider(
-        'https://goerli.infura.io/v3/78fdbf414c944b1298a39ebe9c9188a1'))
+        'https://goerli.infura.io/v3/ed599a3216c6438696858db95972332c'))
     address = '0x9D13C3C58B2B60638986763A83B671bE616458DF'
     privateKey = '0x797c455a6804272375a86912af07cc63927e73121701b00b44495725acad3af9'
     nonce = w3.eth.getTransactionCount(address)
