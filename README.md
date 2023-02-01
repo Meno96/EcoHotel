@@ -1,5 +1,5 @@
 <h1 align="center">
-    Pomelia EcoHotel
+    Hardhat Fund Me
 </h1>
 
 <br/>
