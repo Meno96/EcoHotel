@@ -48,9 +48,21 @@ These requests will then be displayed in table form in the web application and a
 - A logging system to memorize the last IP that accessed the platform for a certain administrator user, in order to show a warning message when this is different from      the previous one.
 
 ## 🚀&nbsp; How it's suppose to work?
-
 Once logged in with the admin user you are on this page:
 
 <p align="center">
     <img width="80%" src="./assets/GitHubImages/screen1.png" alt="Homepage">
 </p>
+
+### Produced And Consumed Energy Table
+If we enter the first link we can see the table with the relative data of energy produced and energy consumed:
+
+<p align="center">
+    <img width="80%" src="./assets/GitHubImages/screen2.png" alt="Homepage">
+</p>
+
+This data is extracted from an SQL database which is populated when a transaction is sent to the Goerli blockchain.
+
+By clicking on the hash of the transaction, you are redirected to Goerli's Etherscan where you can see all the details of the transaction.
+
+
