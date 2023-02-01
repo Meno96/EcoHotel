@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Accedi</title>
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script type="application/x-javascript">
@@ -34,7 +34,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <body>
     <!-- main -->
     <div class="main-w3layouts wrapper">
-      <h1>Accedi</h1>
+      <h1>Login</h1>
       <div class="main-agileinfo">
         <div class="agileits-top">
           <form action="#" method="post">
@@ -53,7 +53,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               placeholder="Password"
               required=""
             />
-            <input type="submit" value="ENTRA" />
+            <input type="submit" value="LOGIN" />
           </form>
 
           {% for message in messages %}
@@ -61,7 +61,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           {% endfor %}
 
           <p>
-            Non hai un Account? <a href="{% url 'register' %}"> Registrati!</a>
+            Do not have an account? <a href="{% url 'register' %}"> Sign up!</a>
           </p>
         </div>
       </div>

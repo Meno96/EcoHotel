@@ -1,44 +1,51 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="{% static '/css/style.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
     <title>Pomelia Eco Hotel</title>
     <link rel="shortcut icon" href="{% static '/img/logo.png' %}" />
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-- Navbar in common da estendere tramite extends -->
 
     <nav class="navbar">
+      <div class="nav-elem">
+        <a class="logo" href="{% url 'home' %}">
+          {% load static %}
+          <img
+            src="{% static '/img/logo.png' %}"
+            alt=""
+            width="30"
+            height="24"
+            class="img"
+          />
+          Pomelia Eco Hotel
+        </a>
+      </div>
 
-        <div class="nav-elem">
-            <a class="logo" href="{% url 'home' %}">
-                {% load static %}
-                <img src="{% static '/img/logo.png' %}" alt="" width="30" height="24" class="img">
-                Pomelia Eco Hotel
-            </a>
-        </div>
-
-        <!-- Sezione a destra della navbar che mostra username e permette il logout -->
-        <div class="nav-elem">
-            <span class="hello-msg">Ciao, {{request.user}}</span>
-            <span> <a href="{% url 'logout' %}">Logout</a></span>
-        </div>
-
+      <!-- Sezione a destra della navbar che mostra username e permette il logout -->
+      <div class="nav-elem">
+        <span class="hello-msg">Hello, {{request.user}}</span>
+        <span> <a href="{% url 'logout' %}">Logout</a></span>
+      </div>
     </nav>
 
-    {% block content %}
-    {% endblock %}
+    {% block content %} {% endblock %}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
-</body>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

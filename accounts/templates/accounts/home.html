@@ -6,7 +6,7 @@
     <div class="container">
         <!-- Mostra l'avviso se l'IP non corrisponde -->
         {% if checkIp == True %}
-            <p>L'indirizzo IP corrente è diverso dal precedente con cui è stato effettuato il login!</p>
+            <p>The current IP address is different from the previous one you logged in with!</p>
         {% endif %}
 
         {% for message in messages %}
@@ -15,10 +15,10 @@
         <ul class="lista-home">
             <!-- Link con testo che cambia se l'accesso è stato effettuato con account con privilegi staff -->
             {% if request.user.is_staff %}
-                <li><a class='text' href="{% url 'consumi' %}">Visualizza la tabella con il totale consumi, prodotto e l'hash (admin)</a></li>
-                <li><a class='text' href="{% url 'inser' %}">Form per inserire dati del database (admin)</a></li>
+                <li><a class='text' href="{% url 'consumi' %}">View the table with the total consumption, product and hash (admin)</a></li>
+                <li><a class='text' href="{% url 'inser' %}">Form to enter database data (admin)</a></li>
             {% else %}
-                <li><a class='text' href="{% url 'consumi' %}">Visualizza la tabella con i consumi e l'hash</a></li>
+                <li><a class='text' href="{% url 'consumi' %}">View the table with consumption and hash</a></li>
             {% endif %}
         </ul>
     </div>

@@ -20,11 +20,11 @@ class CreateUserForm(UserCreationForm):
         })
 
         self.fields['password1'].widget.attrs.update({
-            'placeholder': 'Inserisci la Password..',
+            'placeholder': 'Password..',
         })
 
         self.fields['password2'].widget.attrs.update({
-            'placeholder': 'Inserisci nuovamente la Password..',
+            'placeholder': 'Enter the Password again..',
         })
 
         # Ciclo for per attribuire le classi

@@ -7,69 +7,78 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 {% load static %}
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript">
+      addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <!-- Custom Theme files -->
+    <link
+      href="{% static '/css/style.css' %}"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <link
+      href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i"
+      rel="stylesheet"
+    />
+    <!-- //web font -->
+    <link rel="shortcut icon" href="{% static '/img/logo.png' %}" />
+  </head>
 
-<head>
-	<title>Registrati</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script
-		type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-	<!-- Custom Theme files -->
-	<link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
-	<!-- //Custom Theme files -->
-	<!-- web font -->
-	<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
-	<!-- //web font -->
-	<link rel="shortcut icon" href="{% static '/img/logo.png' %}" />
-</head>
+  <body>
+    <!-- main -->
+    <div class="main-w3layouts wrapper">
+      <h1>Sign Up</h1>
+      <div class="main-agileinfo">
+        <div class="agileits-top">
+          <form action="#" method="post">
+            {% csrf_token %} {{form.username}} {{form.email}} {{form.password1}}
+            {{form.password2}}
+            <div class="wthree-text">
+              <label class="anim">
+                <input type="checkbox" class="checkbox" required="" />
+                <span>I agree to the Terms and Conditions</span>
+              </label>
+              <div class="clear"></div>
+            </div>
+            <input type="submit" value="SIGN UP" />
+          </form>
 
-<body>
-	<!-- main -->
-	<div class="main-w3layouts wrapper">
-		<h1>Registrazione</h1>
-		<div class="main-agileinfo">
-			<div class="agileits-top">
-				<form action="#" method="post">
-					{% csrf_token %}
-					{{form.username}}
-					{{form.email}}
-					{{form.password1}}
-					{{form.password2}}
-					<div class="wthree-text">
-						<label class="anim">
-							<input type="checkbox" class="checkbox" required="">
-							<span>Accetto Termini e Condizioni</span>
-						</label>
-						<div class="clear"> </div>
-					</div>
-					<input type="submit" value="REGISTRATI">
-				</form>
-				
-				<p id="messages">{{form.errors}}</p>
+          <p id="messages">{{form.errors}}</p>
 
-				<p> Hai già un Account? <a href="{% url 'login' %}"> Effettua il Login!</a></p>
-			</div>
-		</div>
-		<!-- copyright -->
-		<div class="colorlibcopy-agile">
-			<p>© 2018 Colorlib Signup Form. All rights reserved | Design by <a href="https://colorlib.com/"
-					target="_blank">Colorlib</a></p>
-		</div>
-		<!-- //copyright -->
-		<ul class="colorlib-bubbles">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
-	</div>
-	<!-- //main -->
-</body>
-
+          <p>
+            Do you already have an account?
+            <a href="{% url 'login' %}">Login!</a>
+          </p>
+        </div>
+      </div>
+      <!-- copyright -->
+      <div class="colorlibcopy-agile">
+        <p>
+          © 2018 Colorlib Signup Form. All rights reserved | Design by
+          <a href="https://colorlib.com/" target="_blank">Colorlib</a>
+        </p>
+      </div>
+      <!-- //copyright -->
+      <ul class="colorlib-bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <!-- //main -->
+  </body>
 </html>
