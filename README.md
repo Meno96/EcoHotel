@@ -65,4 +65,32 @@ This data is extracted from an SQL database which is populated when a transactio
 
 By clicking on the hash of the transaction, you are redirected to Goerli's Etherscan where you can see all the details of the transaction.
 
+<p align="center">
+    <img width="80%" src="./assets/GitHubImages/screen3.png" alt="Homepage">
+</p>
+
+### Form to enter database data
+If we enter the second link we access the form to enter data into the database:
+
+<p align="center">
+    <img width="80%" src="./assets/GitHubImages/screen4.png" alt="Homepage">
+</p>
+
+By sending the data, a transaction will be sent on the Goerli blockchain and will be shown in the table in the previous link.
+
+## 🏴‍☠️&nbsp; Add ons
+
+There is an implementation to check if the login ip address is always the same or not for the admin user.
+
+## 💭&nbsp; My thoughts
+
+As a crypto and blockchain enthusiast it was very satisfying and useful to get my hands on transactions in the blockchain.
+
+However, in this project the Infura API keys and the private key of the wallet are exposed and it's not good at all for security, but being my first project I didn't know how to do it. Now, after several other projects, I know how to do it and maybe in the future I will upgrade.
+
+## 📫&nbsp; Have a question? Want to chat? 
+
+[LinkedIn](https://www.linkedin.com/in/daniele-menin/)
+
+[Instagram](https://www.instagram.com/danielemeno96/)
 
