@@ -2,6 +2,8 @@
     Pomelia EcoHotel
 </h1>
 
+<br/>
+
 This repo shows how to create a blockchain-based tracking system of consumption and energy produced by photovoltaic panels via a web application.
 
 This system shall receive, at a specified endpoint, POST requests in JSON in the following format: 
