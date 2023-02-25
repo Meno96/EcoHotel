@@ -1,5 +1,5 @@
 <h1 align="center">
-    Hardhat Fund Me
+    EcoHotel
 </h1>
 
 <br/>
