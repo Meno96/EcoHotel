@@ -1,5 +1,5 @@
 <h1 align="center">
-    EcoHotel
+    Pomelia EcoHotel
 </h1>
 
 <br/>
